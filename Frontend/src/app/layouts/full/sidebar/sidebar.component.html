@@ -1,0 +1,10 @@
+<mat-nav-list appAccordion>
+    <mat-list-item appAccordionLink *ngFor="let shopitem of shopItems.getShopitem()" routerLinkActive="selected"
+        group="{{shopitem.state}}">
+        <a class="" appAccordionToggle [routerLink]="['/drug/',shopitem.state]"
+            *ngIf="shopitem.type === 'link' && (shopitem.role === '' || shopitem.role===userRole)">
+            <mat-icon>{{shopitem. icon}}</mat-icon>
+            <span>{{shopitem. name}}</span>
+        </a>
+    </mat-list-item>
+</mat-nav-list>
